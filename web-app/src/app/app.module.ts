@@ -13,9 +13,10 @@ import { DescontosPageComponent } from './pages/descontos-page/descontos-page.co
 import { SobrePageComponent } from './pages/sobre-page/sobre-page.component';
 import { PerfilPageComponent } from './pages/perfil-page/perfil-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { UserEvaluationComponent } from './components/user-evaluation/user-evaluation.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomePageComponent, ListaAtracoesPageComponent, AtracaoPageComponent, DescontosPageComponent, SobrePageComponent, PerfilPageComponent, NotFoundPageComponent],
+  declarations: [AppComponent, NavbarComponent, HomePageComponent, ListaAtracoesPageComponent, AtracaoPageComponent, DescontosPageComponent, SobrePageComponent, PerfilPageComponent, NotFoundPageComponent, UserEvaluationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
