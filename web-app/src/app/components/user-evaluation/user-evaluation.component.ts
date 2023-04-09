@@ -11,7 +11,6 @@ defineComponents(IgcRatingComponent);
   styleUrls: ['./user-evaluation.component.scss','./user-make-review.component.scss']
 })
 export class UserEvaluationComponent {
-  atracoes_import:ListaAtracoesPageComponent = new ListaAtracoesPageComponent();
   createReview: boolean = false;
 
   today: date = {
@@ -52,10 +51,6 @@ export class UserEvaluationComponent {
 
   openCloseReview(): void{
     this.createReview = !this.createReview;
-  }
-
-  closeDrawbar(): void{
-    // devo fazer logica para fechar aqui
   }
 
 }
