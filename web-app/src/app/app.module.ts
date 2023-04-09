@@ -15,17 +15,31 @@ import { PerfilPageComponent } from './pages/perfil-page/perfil-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { UserEvaluationComponent } from './components/user-evaluation/user-evaluation.component';
 import { DescontosPageExtendedComponent } from './pages/descontos-page-extended/descontos-page-extended.component';
-
-
+import { HotelCardComponent } from './components/hotel-card/hotel-card.component';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 
 @NgModule({
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [AppComponent, NavbarComponent, HomePageComponent, ListaAtracoesPageComponent, AtracaoPageComponent, DescontosPageComponent, SobrePageComponent, PerfilPageComponent, NotFoundPageComponent, UserEvaluationComponent, DescontosPageExtendedComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomePageComponent,
+    ListaAtracoesPageComponent,
+    AtracaoPageComponent,
+    DescontosPageComponent,
+    SobrePageComponent,
+    PerfilPageComponent,
+    NotFoundPageComponent,
+    UserEvaluationComponent,
+    DescontosPageExtendedComponent,
+    HotelCardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    MdbCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
