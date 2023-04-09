@@ -1,7 +1,6 @@
-import { User_review, date } from './user_review';
+import { User_review, date } from '../../../../../server/src/models/reviews';
 import { Component } from '@angular/core';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
-import { ListaAtracoesPageComponent } from 'src/app/pages/lista-atracoes-page/lista-atracoes-page.component';
 
 defineComponents(IgcRatingComponent);
 
