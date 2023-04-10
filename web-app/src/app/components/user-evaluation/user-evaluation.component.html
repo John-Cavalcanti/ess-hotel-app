@@ -101,34 +101,36 @@
                 </div>
 
 
-                <form action="" method="post" class="evaluation-form">
+                <form [formGroup]="evaluationForm" (ngSubmit)="onSubmit" class="evaluation-form">
 
                     <div class="overall-rating rating">
                         <h3>Avaliação geral : </h3>
-                        <igc-rating name="ratingValue" [value]="ratingValue" min="1" max="5" hover-preview></igc-rating>
+                        <igc-rating name="ratingValue" [value]="ratingValue" min="1" max="5" hover-preview formControlName="overallR"></igc-rating>
                     </div>
 
 
                     <textarea name="avaliacao_escrita" id="written-evaluation" cols="50" rows="4" maxlength="100"
-                        placeholder="Descreva sua experiência (opcional)"></textarea>
+                        placeholder="Descreva sua experiência (opcional)" 
+                        formControlName="writtenR"
+                        ></textarea>
 
                     <div class="limpeza-rating rating">
                         <h3>Limpeza : </h3>
-                        <igc-rating [value]="ratingCleanValue" min="1" max="5" hover-preview></igc-rating>
+                        <igc-rating [value]="ratingCleanValue" min="1" max="5" hover-preview formControlName="cleanR"></igc-rating>
                     </div>
 
                     <div class="security-rating rating">
                         <h3>Segurança : </h3>
-                        <igc-rating [value]="ratingSecurityValue" min="1" max="5" hover-preview></igc-rating>
+                        <igc-rating [value]="ratingSecurityValue" min="1" max="5" hover-preview formControlName="securityR"></igc-rating>
                     </div>
 
                     <div class="funny-rating rating">
                         <h3>Diversão : </h3>
-                        <igc-rating [value]="ratingFunnyValue" min="1" max="5" hover-preview></igc-rating>
+                        <igc-rating [value]="ratingFunnyValue" min="1" max="5" hover-preview formControlName="funnyR"></igc-rating>
                     </div>
 
 
-                    <button>Postar</button>
+                    <button type="submit">Postar</button>
                 </form>
 
             </header>

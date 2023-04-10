@@ -1,16 +1,14 @@
-import { date, User_review } from '../models/reviews';
-
-export class ReviewsController {
-    reviews: User_review[];
-
-    comentario: string = 'alo'
-    today: date = {
-        day: 8,
-        month: "april",
-        year: 2022
-    };
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReviewsController = void 0;
+class ReviewsController {
     constructor() {
+        this.comentario = 'alo';
+        this.today = {
+            day: 8,
+            month: "april",
+            year: 2022
+        };
         this.reviews = [
             {
                 nome: "João",
@@ -36,25 +34,22 @@ export class ReviewsController {
                 comment: this.comentario,
                 date_of_comment: this.today,
             }
-        ]
+        ];
     }
-
-    addReview(name: string, country: string, comment: string, date: date) {
-        const newReview: User_review = {
-            nome : name,
+    addReview(name, country, comment, date) {
+        const newReview = {
+            nome: name,
             country: country,
             comment: comment,
             date_of_comment: date
-        }
-
+        };
         this.reviews.push(newReview);
     }
-
-    getAtractionReview(idReview: any){
+    getAtractionReview(idReview) {
         return idReview;
     }
-
-    getAllReviews(){
+    getAllReviews() {
         return this.reviews;
     }
 }
+exports.ReviewsController = ReviewsController;
