@@ -1,6 +1,9 @@
+import { UserEvaluationService } from './user-evaluation.service';
 import { User_review, date } from '../../../../../server/src/models/reviews';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 defineComponents(IgcRatingComponent);
 
@@ -9,47 +12,57 @@ defineComponents(IgcRatingComponent);
   templateUrl: './user-evaluation.component.html',
   styleUrls: ['./user-evaluation.component.scss','./user-make-review.component.scss']
 })
-export class UserEvaluationComponent {
+export class UserEvaluationComponent implements OnInit {
+
+  // variaveis para exibir elementos no front end
   createReview: boolean = false;
-
-  today: date = {
-    day : 8,
-    month: "april",
-    year: 2022
-  };
-  
-  comentario: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
-  reviews: User_review[] = [
-    {   nome:"Joao",
-        country: "Brazil",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    },
-    {   nome:"Ana",
-        country: "Argentina",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    },
-    {   nome:"Lucas",
-        country: "Eua",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    },
-    {   nome:"Chang",
-        country: "China",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    }
-  ];
-
   ratingValue: number = 0;
   ratingCleanValue: number = 0;
   ratingFunnyValue: number = 0;
   ratingSecurityValue: number = 0;
 
+  evaluationForm: FormGroup;
+
+  // variaveis placeholder  para exibir comentarios
+  /*today: date = {
+    day : 8,
+    month: "april",
+    year: 2022
+  };
+  
+  comentario: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";*/
+
+  reviews: User_review[] = [];
+
+  // metodos da classe 
+
+  constructor(
+    private ueService : UserEvaluationService,
+    private fb: FormBuilder
+    ) {
+      this.evaluationForm = this.fb.group({
+        overallR: ['', Validators.required],
+        cleanR: ['', Validators.required],
+        securityR: ['', Validators.required],
+        funnyR: ['', Validators.required],
+        writtenR: ['', Validators.required]
+      })
+    }
+
+  onSubmit() {
+    const formData = this.evaluationForm.value;
+    this.ueService.addReview(formData).subscribe();
+    this.evaluationForm.reset();
+  }
+
   openCloseReview(): void{
     this.createReview = !this.createReview;
+  }
+
+  ngOnInit(): void {
+    this.ueService.getData().subscribe((data: any) => {
+      this.reviews = data.allReviews;
+    });
   }
 
 }

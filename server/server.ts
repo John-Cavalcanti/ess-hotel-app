@@ -1,4 +1,6 @@
 import express, { Express, Request, Response } from 'express';
+import reviews from './src/routes/reviews.routes';
+//import fs from 'fs';
 
 const app: Express = express();
 const port =  3000;
@@ -12,11 +14,15 @@ var allowCrossDomain = (req: Request, res: Response, next: any) => {
 
 app.use(allowCrossDomain);
 app.use(express.json());
-// example of componenet routers app.use('component', componentRouter);
 
-/*app.get('/', (req: Request, res: Response, next: any) => {
+// example of componenet routers app.use('component', componentRouter);
+// link das rotas pro backend
+app.use('/reviews', reviews);
+
+
+app.get('/', (req: Request, res: Response, next: any) => {
     res.send('Express + TypeScript Server');
-});*/
+});
 
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);

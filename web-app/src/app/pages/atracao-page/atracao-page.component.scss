@@ -37,6 +37,24 @@
   }
 }
 
+.reviews {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 16px;
+
+  p {
+    margin-top: 0px;
+  }
+
+  .reviews-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
 .diviser {
   width: 100%;
   margin: 12px 0px;
@@ -50,11 +68,11 @@
   gap: 12px;
 
   .atracoes-info,
-  .atracoes-review {
+  .atracoes-tickets {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    border: 2px solid #ced0d4;
+    border: 2px solid;
     padding: 12px 20px;
 
     .info-and-icon {
@@ -73,9 +91,86 @@
 }
 
 .see-reviews {
-  text-align: center;
   cursor: pointer;
   color: #006ce4;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .tickets-controller {
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+    border: 1px solid black;
+    height: fit-content;
+    align-items: center;
+    font-family: "NATS-Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    gap: 12px;
+
+    button {
+      background-color: white;
+      cursor: pointer;
+      border: 0px;
+      padding: 8px 24px;
+      height: 40px;
+      color: #006ce4;
+
+      &:hover {
+        background-color: rgba(0, 108, 228, 0.3);
+      }
+
+      &:disabled {
+        background-color: #ced0d4;
+      }
+    }
+
+    .decrease-button {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    .increase-button {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}
+
+.price-total {
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+  justify-content: space-between;
+  align-items: center;
+
+  .total-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    font-family: "NATS-Regular";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+    background-color: #006ce4;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 8px;
+    padding: 8px 32px;
+    height: 40px;
+
+    &:hover {
+      background-color: #004594;
+    }
+  }
 }
 
 h1 {
@@ -95,11 +190,11 @@ p {
 
 // ##########  DRAWBAR ############
 
-app-user-evaluation{
+app-user-evaluation {
   width: 100%;
 }
 
-.overlay{
+.overlay {
   position: absolute;
   z-index: 5;
   width: 100vw;
@@ -108,7 +203,7 @@ app-user-evaluation{
   backdrop-filter: blur(1px);
 }
 
-#reviews-page{
+#reviews-page {
   position: absolute;
   width: 61.7vw;
   height: 100%;
@@ -119,18 +214,17 @@ app-user-evaluation{
   //background-color: black;
 }
 
-.close-reviews-button{
+.close-reviews-button {
   width: 3.85vw;
   height: 3.85vw;
-  background-color: rgba($color: #6A9EDA, $alpha: 1.0);
+  background-color: rgba($color: #6a9eda, $alpha: 1);
   border: none;
   color: #ffffff;
   border-radius: 5px 0px 0px 5px;
   margin-top: 4vh;
 }
 
-.close-reviews-button:hover{
+.close-reviews-button:hover {
   background-color: #4d8cd3;
   cursor: pointer;
-} 
-
+}

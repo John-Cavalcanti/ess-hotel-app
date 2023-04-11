@@ -8,6 +8,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { PerfilPageComponent } from './pages/perfil-page/perfil-page.component';
 import { SobrePageComponent } from './pages/sobre-page/sobre-page.component';
 import { DescontosPageExtendedComponent } from './pages/descontos-page-extended/descontos-page-extended.component';
+import { PagamentosPageComponent } from './pages/pagamentos-page/pagamentos-page.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PerfilPageComponent,
+  },
+  {
+    path: 'pagamento',
+    component: PagamentosPageComponent,
   },
   {
     path: '**',

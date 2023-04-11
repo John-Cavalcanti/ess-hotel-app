@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 120px;
+  width: 80%;
+  height: 100vh;
+  margin: auto;
+  align-items: center;
+
+  img {
+    width: 60%;
+  }
+}
+
+.text-and-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  letter-spacing: 2px;
+  font-size: 25px;
+  margin-top: 1rem;
+  line-height: 2rem;
+}
+
+button {
+  font-family: "NATS-Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+  background-color: #006ce4;
+  cursor: pointer;
+  border: 0px;
+  border-radius: 8px;
+  padding: 8px 32px;
+  height: 40px;
+
+  &:hover {
+    background-color: #004594;
+  }
+}
