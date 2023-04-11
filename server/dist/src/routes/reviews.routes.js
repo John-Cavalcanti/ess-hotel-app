@@ -10,16 +10,6 @@ reviews.route('/')
     // rota para enviar todas as reviews disponiveis, creio que nao sera necessario
     let allReviews = reviewsController.getAllReviews();
     return res.send({ allReviews });
-})
-    .post((req, res) => {
-    // rota para criar novas reviews
-    let nome = req.body.nome;
-    let country = req.body.country;
-    let comment = req.body.comment;
-    let data = req.body.date;
-    reviewsController.addReview(nome, country, comment, data);
-    let allReviews = reviewsController.getAllReviews();
-    return res.json(allReviews);
 });
 reviews.route('/:id')
     .get((req, res) => {
@@ -32,5 +22,14 @@ reviews.route('/:id')
     else {
         return res.send(atractionReviews);
     }
+}).post((req, res) => {
+    // rota para criar novas reviews
+    let nome = req.body.nome;
+    let country = req.body.country;
+    let comment = req.body.comment;
+    let data = req.body.date;
+    reviewsController.addReview(nome, country, comment, data);
+    let allReviews = reviewsController.getAllReviews();
+    return res.json(allReviews);
 });
 exports.default = reviews;

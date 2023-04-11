@@ -1,12 +1,12 @@
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs'; // import do observable que sera o objeto recebido do back pelos metodos
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient} from '@angular/common/http'; // import do httpClient neste servico
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserEvaluationService {
-  private apiUrl = 'http://localhost:3000/review';
+  private apiUrl = 'http://localhost:3000/reviews';
 
   constructor(private http: HttpClient) { }
 

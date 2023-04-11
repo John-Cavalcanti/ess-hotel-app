@@ -24,36 +24,15 @@ export class UserEvaluationComponent implements OnInit {
   evaluationForm: FormGroup;
 
   // variaveis placeholder  para exibir comentarios
-  today: date = {
+  /*today: date = {
     day : 8,
     month: "april",
     year: 2022
   };
   
-  comentario: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+  comentario: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";*/
 
-  reviews: User_review[] = [
-    {   nome:"Joao",
-        country: "Brazil",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    },
-    {   nome:"Ana",
-        country: "Argentina",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    },
-    {   nome:"Lucas",
-        country: "Eua",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    },
-    {   nome:"Chang",
-        country: "China",
-        comment: this.comentario,
-        date_of_comment: this.today,
-    }
-  ];
+  reviews: User_review[] = [];
 
   // metodos da classe 
 
@@ -82,7 +61,7 @@ export class UserEvaluationComponent implements OnInit {
 
   ngOnInit(): void {
     this.ueService.getData().subscribe((data: any) => {
-      this.reviews = data.data;
+      this.reviews = data.allReviews;
     });
   }
 

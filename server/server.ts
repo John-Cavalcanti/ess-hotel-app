@@ -17,7 +17,7 @@ app.use(express.json());
 
 // example of componenet routers app.use('component', componentRouter);
 // link das rotas pro backend
-app.use('/reviews', reviews)
+app.use('/reviews', reviews);
 
 
 app.get('/', (req: Request, res: Response, next: any) => {
