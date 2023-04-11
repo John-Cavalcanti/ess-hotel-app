@@ -1,0 +1,59 @@
+<div class="box">
+    <div class="info">
+        <h1>Accomodare Hotel</h1>
+        <div class="valor">
+            <h2 id="texto_total">Total</h2>
+            <p id="texto_moeda">BRL</p>
+            <h2 id="texto_valor">R$590,90</h2>
+        </div>
+        <div class="linha"></div>
+        <p id="texto_metodos">Escolha seu Método de Pagamento</p>
+        <div class="metodos">
+            <div class="cartao">
+                <button (click)="getCard()" class="botao"></button>
+                <img id="image_cartao" src="../../../assets/images/bandeiras-de-cartao-de-credito-o-que-sao-e-quais-as-principais-no-brasil.jpg" alt="Bandeiras dos cartões">
+            </div>
+            <div class="pix">
+                <button (click)="getPix()" class="botao"></button>
+                <img id="image_pix" src="../../../assets/images/pix_boleto.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="linha2"></div>
+    <div class="dados">
+        <div *ngIf="isCard" class="cartao">
+            <h2>Dados do Cartão</h2>
+            <div class="nome">
+                <input type="text" id="campo_texo" name="nome" class="nome_cartao" placeholder="Nome Completo" size="30" maxlength="50">
+            </div>
+            <div class="carta">              
+                <input type="text" id="campo_texo" name="numero" class="numero_cartao" placeholder="Número do Cartão" size="16" maxlength="16">
+                <div class="codigo">
+                    <input type="text" id="campo_texo" name="cvc" class="cvc_cartao" placeholder="CVC" size="3" maxlength="3">
+                </div>
+            </div>
+            <div class="data">
+                <input type="date" id="campo_texo" name="data" class="data_validade" placeholder="" size="30" maxlength="50">
+            </div>
+        </div>
+        <div *ngIf="!isCard" class="pix_boleto">
+            <div class="data">
+                <h2>PIX ou Boleto</h2>
+            </div>
+        </div>
+        <button (click)="abrirPopup()" id="confirmarPagamento">Confirmar pagamento</button>     
+    </div>
+    
+
+</div>
+
+<div class="popup-container" *ngIf="popupAberto">
+    <div class="popup">
+        <h2>PAGAMENTO EFETUADO</h2>
+        <h3>Seu pagamento foi efetuado com sucesso!</h3>
+        <p>Em breve enviaremos o comprovante de reserva para o seu email cadastrado.</p>
+        <p>Obrigado por escolher o Accomodare Hotel, e boa estadia!</p>
+
+        <button (click)="fecharPopup()" id="fecharPopup">Fechar</button>
+    </div>
+</div>

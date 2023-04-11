@@ -1,4 +1,4 @@
-#background{
+#background {
   width: 100vw;
   height: 100vh;
   left: 2%;
@@ -37,25 +37,21 @@
   }
 }
 
-
 #retangulo_51 {
-  position: absolute;
-  width: 15%;
-  height: 10%;
-  left: 42%;
-  top: 85%;
-  background: #666666;
-  border-radius: 10%;
-  font-family: 'NATS';
+  background: white;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: 2px solid #006ce4;
+  font-family: "NATS-Regular";
   font-style: normal;
   font-weight: 400;
-  font-size: 2.5vw; /* ou 2.5vh, dependendo da sua preferência */
+  font-size: 1.5vw; /* ou 2.5vh, dependendo da sua preferência */
   line-height: 1.2;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
-  color: rgb(0, 0, 0);
+  color: #006ce4;
   text-decoration: none;
 }
 
@@ -64,7 +60,7 @@
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
 }
 html {
@@ -72,7 +68,7 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
-.containergeral{
+.containergeral {
   flex-wrap: wrap;
   display: flex;
   padding: 24px;
@@ -108,8 +104,7 @@ html {
   width: 45%;
   height: 45%;
 }
-.card2{
+.card2 {
   width: 45%;
   height: 30%;
 }
-
