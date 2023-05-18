@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReviewsController = void 0;
 var ReviewsController = /** @class */ (function () {
     function ReviewsController() {
-        this.comentario = 'alo';
         this.today = {
             day: 8,
             month: "april",
@@ -13,35 +12,45 @@ var ReviewsController = /** @class */ (function () {
             {
                 nome: "João",
                 country: "Brazil",
-                comment: this.comentario,
+                comment: 'Amei a atração! Super divertida e emocionante!',
                 date_of_comment: this.today,
+                Like: true,
+                reviewID: '11a24b90',
             },
             {
                 nome: "Ana",
                 country: "Argentina",
-                comment: this.comentario,
+                comment: 'A atração é legal, mas poderia ser melhor. Faltou um pouco de emoção.',
                 date_of_comment: this.today,
+                Like: true,
+                reviewID: '11a24b90',
             },
             {
                 nome: "Lucas",
                 country: "Eua",
-                comment: this.comentario,
+                comment: 'A atração é muito boa para famílias com crianças. Todo mundo se diverte.',
                 date_of_comment: this.today,
+                Like: false,
+                reviewID: '11a24b90',
             },
             {
                 nome: "Chang",
                 country: "China",
-                comment: this.comentario,
+                comment: 'Foi uma experiência única! Adorei cada minuto.',
                 date_of_comment: this.today,
+                Like: true,
+                reviewID: '11a24b90',
             }
         ];
     }
-    ReviewsController.prototype.addReview = function (name, country, comment, date) {
+    ReviewsController.prototype.addReview = function (name, country, comment, date, like, id) {
         var newReview = {
             nome: name,
             country: country,
             comment: comment,
-            date_of_comment: date
+            date_of_comment: date,
+            Like: like,
+            reviewID: id,
         };
         this.reviews.push(newReview);
     };

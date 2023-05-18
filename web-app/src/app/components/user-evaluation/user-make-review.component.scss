@@ -71,7 +71,7 @@
     flex-direction: column;
 }
 
-.evaluation-form button{
+.evaluation-form .submitbutton{
     right: 0;
     height: 5vh;
     min-height: 35px;
@@ -87,9 +87,24 @@
     border-radius: 6px;
 }
 
-.evaluation-form button:hover{
+.evaluation-form .submitbutton:hover{
     background-color: rgba($color: #2f46c8, $alpha: 0.85);
     cursor: pointer;
+}
+
+.likeDislikeButtons{
+    width: 6vw;
+    height: 4vh;
+    border: none;
+    border-radius: 8px;
+    margin: 10px;
+    font-size: small;
+
+    background-color: rgba($color: #0022D7, $alpha: 0.85);
+}
+
+.likeDislikeButtons:hover{
+    background-color: rgba($color: #2f46c8, $alpha: 0.85);
 }
 
 #written-evaluation{
