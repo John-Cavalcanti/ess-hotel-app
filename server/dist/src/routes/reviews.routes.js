@@ -28,7 +28,9 @@ reviews.route('/:id')
     var country = req.body.country;
     var comment = req.body.comment;
     var data = req.body.date;
-    reviewsController.addReview(nome, country, comment, data);
+    var id = req.body.revid;
+    var like = req.body.like;
+    reviewsController.addReview(nome, country, comment, data, like, id);
     var allReviews = reviewsController.getAllReviews();
     return res.json(allReviews);
 });
