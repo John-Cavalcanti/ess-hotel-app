@@ -35,9 +35,8 @@ Na página de descontos é possível olhar todos os descontos disponíveis para 
 
 ### Dependências
 
-- Angular
-- Node 
-- npm
+- [Angular](https://angular.io/docs)
+- [Node e npm](https://nodejs.org/en/download/)
 
 ### Instalando dependências 
 ```
