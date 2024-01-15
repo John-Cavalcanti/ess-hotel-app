@@ -81,7 +81,8 @@
 
             <div class="back-arrow">
                 <button (click)="openCloseReview()">
-                    < </button>
+                    < 
+                </button>
                         <!-- <img src="../../../assets/images/iconmonstr-arrow-left-thin.svg" alt=""> -->
             </div>
 
@@ -99,12 +100,12 @@
                         <p class="user-country">{{nacionalidadeUser}}</p>
                     </div>
                 </div>
-                <form [formGroup]="evaluationForm" (ngSubmit)="onSubmit" class="evaluation-form">
+                <form [formGroup]="evaluationForm" (ngSubmit)="onSubmit()" class="evaluation-form">
 
                     <div class="overall-rating rating">
                         <h3>Gostou ? </h3>
-                        <button class="likeDislikeButtons" [(ngModel)]="gostou" type="button" value="true">SIM</button>
-                        <button class="likeDislikeButtons" [(ngModel)]="gostou" type="button" value="false">NÃO</button>
+                        <button class="likeDislikeButtons" type="button" value="true" (click)="setGostou(true)">SIM</button>
+                        <button class="likeDislikeButtons" type="button" value="false" (click)="setGostou(false)">NÃO</button>
                     </div>
 
                     <textarea name="avaliacao_escrita" id="written-evaluation" cols="50" rows="4" maxlength="100"

@@ -32,8 +32,8 @@ export class UserEvaluationComponent implements OnInit {
     private fb: FormBuilder
     ) {
       this.evaluationForm = this.fb.group({
-        nome: '',
-        nacionalidade: '',
+        nome: ['', Validators.required],
+        nacionalidade: ['', Validators.required],
         writtenR: ['', Validators.required],
         liked: '',
       })
@@ -60,11 +60,7 @@ export class UserEvaluationComponent implements OnInit {
 
   // metodos da classe 
 
-  onSubmit():void{
-    return
-  }
-
-  /*onSubmit() {
+  onSubmit() {
     this.evaluationForm.value.liked = this.gostou;
     this.evaluationForm.value.nome = this.nomeUsuario;
     this.evaluationForm.value.nacionalidade = this.nacionalidadeUser;
@@ -74,7 +70,8 @@ export class UserEvaluationComponent implements OnInit {
     this.reviews.unshift(review);
     this.evaluationForm.reset();
     this.openCloseReview();
-  }*/
+    console.log(review);
+  }
 
   openCloseReview(): void{
     this.createReview = !this.createReview;
@@ -93,8 +90,12 @@ export class UserEvaluationComponent implements OnInit {
       if (check != null){
         this.id = check;
       }
-      //console.log(this.id);
     });
 
+  }
+
+  setGostou(value:boolean):void 
+  {
+    this.evaluationForm.get('liked')?.setValue(value);
   }
 }
