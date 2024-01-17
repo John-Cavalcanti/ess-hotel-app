@@ -5,7 +5,7 @@ import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Atracao } from '../../../../../server/src/models/atracao';
 import { ListaAtracoesPageComponent } from 'src/app/pages/lista-atracoes-page/lista-atracoes-page.component';
-//import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 defineComponents(IgcRatingComponent);
@@ -27,7 +27,7 @@ export class UserEvaluationComponent implements OnInit {
 
   constructor(
     //private listaDeAtracoes : ListaAtracoesPageComponent,
-    //private route: ActivatedRoute,
+    private route: ActivatedRoute,
     private ueService : UserEvaluationService,
     private fb: FormBuilder
     ) {
@@ -53,8 +53,6 @@ export class UserEvaluationComponent implements OnInit {
     month: "april",
     year: 2022
   };
-  
-  /*comentario: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";*/
 
   reviews: User_review[] = [];
 
@@ -84,13 +82,13 @@ export class UserEvaluationComponent implements OnInit {
 
     let check;
 
-  /* this.route.paramMap.subscribe((params) => {
+  this.route.paramMap.subscribe((params) => {
 
       check = params.get('atracaoId');
       if (check != null){
         this.id = check;
       }
-    });*/
+    });
 
   }
 
