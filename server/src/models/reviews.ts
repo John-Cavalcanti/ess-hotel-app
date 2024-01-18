@@ -12,7 +12,14 @@ export class User_review {
     Like!: boolean;
     reviewID!: string;
 
-    constructor(name :string, country :string, comment :string, date: date, like:boolean, reviewid: string) {
+    constructor(
+        name :string,
+        country :string, 
+        comment :string, 
+        date: date, 
+        like:boolean, 
+        reviewid: string) 
+        {
         this.nome = name;
         this.country = country;
         this.comment = comment;
