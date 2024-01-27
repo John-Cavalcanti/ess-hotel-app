@@ -7,6 +7,7 @@ var app = builder.Build();
 // getting the models and controllers
 AtracoesController atr = new();
 DiscountController dis = new();
+ReviewsController rev = new();
 
 // Configuring endpoints
 
@@ -37,5 +38,16 @@ discountsRoute.MapGet("/{id}", (string id) =>{
     return dis.GetPriceById(id);
 });
 
+// Endpoints for reviews
+var reviewsRoute = app.MapGroup("/reviews");
+reviewsRoute.MapGet("/", () =>{
+    return rev.GetAllReviews();
+});
+
+/* todo
+reviewsRoute.MapGet("", () => {
+    return rev.
+});
+*/
 
 app.Run();
